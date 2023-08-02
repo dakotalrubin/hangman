@@ -2,6 +2,7 @@
 # Date: August 2nd, 2023
 # File: hangman_helpers.py provides necessary functionality for hangman.py.
 
+# Helps with generating default dictionary word size
 from random import randint
 
 """This helper function imports a file's contents and sorts its lines into a

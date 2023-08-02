@@ -4,7 +4,7 @@
 #       along with a number of lives from 1 to 10, handling unexpected input
 #       using default values. The program opens the provided dictionary file
 #       and reads each line as a new word. Each word length is a key, and each
-#       value is a list of letters for the given word.
+#       value is a list of words with that word length.
 #
 #       The game of Hangman begins, showing the initial game interface. The
 #       player must enter letters to guess the hidden word, whose digits are
@@ -15,7 +15,7 @@
 #       will appear which reflects the player's win or loss, and a new prompt
 #       will be displayed that allows the user to quit or play again.
 
-# Helps with generating default dictionary word size
+# Helps with randomly selecting a word from the dictionary
 from random import choice
 from hangman_helpers import *
 
