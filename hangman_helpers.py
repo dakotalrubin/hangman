@@ -62,14 +62,14 @@ def get_game_options():
 
     # Handles user input for number of lives
     try:
-        number_of_lives = int(input("Choose a number of lives (1 - 10): "))
-        if (1 <= number_of_lives <= 10):
+        number_of_lives = int(input("Choose a number of lives (1 - 20): "))
+        if (1 <= number_of_lives <= 20):
             print(f"You have {number_of_lives} lives.")
         else:
-            number_of_lives = 5
-            print("You have 5 lives.")
+            number_of_lives = 10
+            print("You have 10 lives.")
     except:
-        number_of_lives = 5
-        print("You have 5 lives.")
+        number_of_lives = 10
+        print("You have 10 lives.")
 
     return (user_word_length, number_of_lives)

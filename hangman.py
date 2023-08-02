@@ -1,7 +1,7 @@
 # Author: Dakota Rubin
 # Date: August 2nd, 2023
 # File: hangman.py prompts the user to enter a word size from 2 to 22 letters,
-#       along with a number of lives from 1 to 10, handling unexpected input
+#       along with a number of lives from 1 to 20, handling unexpected input
 #       using default values. The program opens the provided dictionary file
 #       and reads each line as a new word. Each word length is a key, and each
 #       value is a list of words with that word length.
@@ -28,14 +28,14 @@ play_game = True
 
 while (play_game == True):
 
-    # Retrieves user word length and number of lives as a tuple
+    # Retrieves word length and number of lives as a tuple
     game_options = get_game_options()
 
     # choice() randomly selects a word from the dictionary with given word length
     word = choice(dictionary[game_options[0]])
     hidden_word_list = list(word.upper())
 
-    # Creates initial Hangman interface
+    # Creates initial gameplay interface
     digits = []
     for letter in hidden_word_list:
         if letter == "-":
@@ -45,14 +45,10 @@ while (play_game == True):
 
     # Creates initial life counter interface
     life_counter = []
-        
     for i in range(game_options[1]):
         life_counter.append("O")
 
-    # Creates initial list of guessed letters
     guessed_letter_list = []
-
-    # Keeps track of number of lives lost
     lives_lost = 0
 
     # Variable determines whether to keep playing a round of Hangman
@@ -97,7 +93,7 @@ while (play_game == True):
                 else:
                     continue
 
-            # User guessed correctly
+            # User guessed letter correctly
             if guessed_letter in hidden_word_list:
                 print("You guessed right!")
 
@@ -113,7 +109,6 @@ while (play_game == True):
 
                 # Change one "O" to an "X" sequentially in the lives display 
                 life_counter[lives_lost] = "X"
-
                 lives_lost += 1
 
     play_again = input("Would you like to play again? (y/n): ").lower()
